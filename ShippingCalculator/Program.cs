@@ -10,6 +10,13 @@ namespace ShippingCalculator
     {
         static void Main(string[] args)
         {
+            string chosenZone = "";
+
+            do
+            {
+                Console.WriteLine("What is the destination zone?");
+                chosenZone = Console.ReadLine();
+            } while (!chosenZone.Equals("exit"));
         }
     }
 }
