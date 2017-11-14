@@ -6,11 +6,18 @@ using System.Threading.Tasks;
 
 namespace ShippingCalculator
 {
+    public delegate void ShippingFeeDelegate(decimal price, ref decimal fee);
+
     public abstract class DestinationZone
     {
         protected bool requiresAdditionalFee;
 
-        public virtual void CalculateFee(double price, ref double fee) { }
+        public virtual void CalculateFee(decimal price, ref decimal fee) { }
+
+        public bool AdditionalFeeNeeded()
+        {
+            return requiresAdditionalFee;
+        }
 
         public static DestinationZone GetZone(string zone)
         {

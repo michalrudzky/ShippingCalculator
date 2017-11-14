@@ -7,9 +7,9 @@
             requiresAdditionalFee = false;
         }
 
-        public override void CalculateFee(double price, ref double fee)
+        public override void CalculateFee(decimal price, ref decimal fee)
         {
-            fee = price * 0.08;
+            fee = price * 0.08m;
         }
     }
 }
